@@ -1,8 +1,23 @@
 const fs = require("fs");
 const path = require("path");
 const express = require("express");
+const { MongoClient } = require('mongodb');
 
 async function main() {
+
+    const dbName = "backend";
+
+    const DB_CONNECTION_STRING = process.env.DB_CONNECTION_STRING;
+    if (DB_CONNECTION_STRING === undefined) {
+        throw new Error(`Please set a env var DB_CONNECTION_STRING.`);
+    }
+
+    const client = new MongoClient(DB_CONNECTION_STRING);
+    await client.connect();
+
+    const db = client.db(dbName);
+    const assetCollections = db.collection("assets");
+
     const app = express();
     const port = 3000;
 
