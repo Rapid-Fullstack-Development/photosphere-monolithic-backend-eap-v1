@@ -4,7 +4,7 @@ This code accompanies chapter 2 of the book [Rapid Fullstack Development](https:
 
 This is the backend for the Photosphere application. It is a REST API to upload and retrieve assets like photos and videos.
 
-![Photosphere backend diagram](./docs/Photosphere monolithic backend.png)
+![Photosphere backend diagram](docs/Photosphere%20monolithic%20backend.png)
 
 ## Prerequsisites
 
